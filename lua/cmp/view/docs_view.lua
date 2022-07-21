@@ -101,6 +101,8 @@ docs_view.open = function(self, e, view)
   }
   self.window:open(style)
 
+  require('colorizer').attach_to_buffer(self.window:get_buffer())
+
   -- Correct left-col for scrollbar existence.
   if left then
     style.col = style.col - self.window:info().scrollbar_offset
